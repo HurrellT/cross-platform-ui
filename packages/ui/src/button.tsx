@@ -1,37 +1,22 @@
 import * as React from "react";
-import {
-  StyleSheet,
-  GestureResponderEvent,
-  Text,
-  Pressable,
-} from "react-native";
+import { GestureResponderEvent, Pressable, Text } from "react-native";
+import { cssInterop } from "nativewind";
 
 export interface ButtonProps {
   text: string;
   onClick?: (event: GestureResponderEvent) => void;
 }
 
+const StyledPressable = cssInterop(Pressable, { className: "style" });
+const StyledText = cssInterop(Text, { className: "style" });
+
 export function Button({ text, onClick }: ButtonProps) {
   return (
-    <Pressable style={styles.button} onPress={onClick}>
-      <Text style={styles.text}>{text}</Text>
-    </Pressable>
+    <StyledPressable
+      className="bg-blue-500 rounded-lg py-2 px-4"
+      onPress={onClick}
+    >
+      <StyledText className="text-white text-center">{text}</StyledText>
+    </StyledPressable>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    maxWidth: 200,
-    textAlign: "center",
-    borderRadius: 10,
-    paddingTop: 14,
-    paddingBottom: 14,
-    paddingLeft: 30,
-    paddingRight: 30,
-    fontSize: 15,
-    backgroundColor: "#2f80ed",
-  },
-  text: {
-    color: "white",
-  },
-});

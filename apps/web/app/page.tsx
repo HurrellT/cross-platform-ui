@@ -1,13 +1,15 @@
 "use client";
 
-import { Button } from "@repo/ui";
-
-import styles from "../styles/index.module.css";
+import { Button } from "@hurrellt/ui";
+import { View, Text } from "react-native";
 
 export default function Web() {
   return (
-    <div className={styles.container}>
-      <h1>Web</h1>
+    <div>
+      <h1 className="text-3xl font-bold underline text-red-900">Web</h1>
+      <View>
+        <Text>test</Text>
+      </View>
       <Button onClick={() => console.log("Pressed!")} text="Boop" />
     </div>
   );
