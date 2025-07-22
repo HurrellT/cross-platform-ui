@@ -6,15 +6,16 @@ export interface ButtonProps {
   text: string;
   onClick?: (event: GestureResponderEvent) => void;
   testID?: string;
+  className?: string;
 }
 
 const StyledPressable = cssInterop(Pressable, { className: "style" });
 const StyledText = cssInterop(Text, { className: "style" });
 
-export function Button({ text, onClick, testID = "button" }: ButtonProps) {
+export function Button({ text, onClick, testID = "button", className }: ButtonProps) {
   return (
     <StyledPressable
-      className="bg-blue-500 rounded-lg py-2 px-4"
+      className={`bg-blue-500 rounded-lg py-2 px-4 ${className}`}
       onPress={onClick}
       testID={testID}
     >

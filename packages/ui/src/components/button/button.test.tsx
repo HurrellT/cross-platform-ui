@@ -2,15 +2,23 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import { Button } from "./button";
 
+
 describe("Button", () => {
   it("renders correctly", () => {
-    const { toJSON } = render(<Button text="Click me" />);
-    expect(toJSON()).toBeTruthy();
+    const { root } = render(<Button text="Click me" />);
+    expect(root).toBeTruthy();
   });
 
   it("contains the correct text", () => {
-    const button = render(<Button text="Click me" />).toJSON();
-    expect(button).toBeTruthy();
+    const { root } = render(<Button text="Click me" />);
+    expect(root.props.children.props.children).toContain("Click me");
+  });
+
+  it("contains className classes", () => {
+    const { root } = render(
+      <Button text="Click me" testID="button" />
+    );
+    expect(root.props.className).toContain("css-view");
   });
 
   it("calls onClick when pressed", () => {
