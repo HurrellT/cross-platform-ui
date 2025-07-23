@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@hurrellt/ui";
-import { View, Text } from "react-native";
 
 export default function Web() {
   return (

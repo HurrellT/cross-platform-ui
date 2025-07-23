@@ -15,8 +15,8 @@ const StyledText = cssInterop(Text, { className: "style" });
 export function Button({
   text,
   testID = "button",
-  containerClassName,
-  textClassName,
+  containerClassName = "",
+  textClassName = "",
   ...pressableProps
 }: ButtonProps) {
   return (
