@@ -8,7 +8,7 @@ export default function Native() {
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="font-bold text-4xl">Native</Text>
       <Button
-        onClick={() => {
+        onPress={() => {
           console.log("Pressed!");
           alert("Pressed!");
         }}

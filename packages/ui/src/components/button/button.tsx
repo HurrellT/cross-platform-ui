@@ -1,25 +1,34 @@
-import * as React from "react";
-import { GestureResponderEvent, Pressable, Text } from "react-native";
 import { cssInterop } from "nativewind";
+import * as React from "react";
+import { Pressable, PressableProps, Text } from "react-native";
 
-export interface ButtonProps {
+export interface ButtonProps extends PressableProps {
   text: string;
-  onClick?: (event: GestureResponderEvent) => void;
   testID?: string;
-  className?: string;
+  containerClassName?: string;
+  textClassName?: string;
 }
 
 const StyledPressable = cssInterop(Pressable, { className: "style" });
 const StyledText = cssInterop(Text, { className: "style" });
 
-export function Button({ text, onClick, testID = "button", className }: ButtonProps) {
+export function Button({
+  text,
+  testID = "button",
+  containerClassName,
+  textClassName,
+  ...pressableProps
+}: ButtonProps) {
   return (
     <StyledPressable
-      className={`bg-blue-500 rounded-lg py-2 px-4 ${className}`}
-      onPress={onClick}
+      className={`bg-blue-500 rounded-lg py-2 px-4 ${containerClassName}`}
       testID={testID}
+      {...pressableProps}
     >
-      <StyledText className="text-white text-center" testID={`${testID}-text`}>
+      <StyledText
+        className={`text-white text-center ${textClassName}`}
+        testID={`${testID}-text`}
+      >
         {text}
       </StyledText>
     </StyledPressable>

@@ -6,17 +6,17 @@ This is a cross-platform component using React Native and Next.js with TypeScrip
 
 To install dependencies and run the example projects, follow these steps:
 ```sh
-npm install
+yarn install
 ```
 ```sh
-npm run dev
+yarn dev
 ```
 This will start both the web and mobile applications. You can access the web app at `http://localhost:3000` and the mobile app using Expo Go on your device or emulator.
 
 ## Publish the component
 To publish the component to npm, ensure you have the correct package name and version in `package.json` of the `@hurrellt/ui` package. Then run:
 ```sh
-npm run build
+yarn build
 cd packages/ui
 npm publish --access public
 ```
