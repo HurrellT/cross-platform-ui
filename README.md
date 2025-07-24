@@ -24,7 +24,7 @@ npm publish --access public
 ## Component installation and usage
 To use the shared component in your projects, install it via npm:
 ```sh
-npm install @hurrellt/ui
+yarn add @hurrellt/ui
 ```
 Then, you can import and use the `Button` component in your React Native or Next.js applications:
 
@@ -36,8 +36,9 @@ const ExampleComponent = () => {
   return (
     <Button
       text="Click me"
-      onClick={() => console.log("Button clicked!")}
-      className="bg-blue-500 text-white"
+      onPress={() => console.log("Button clicked!")}
+      containerClassName="bg-blue-500"
+      textClassName="text-white"
     />
   );
 };
