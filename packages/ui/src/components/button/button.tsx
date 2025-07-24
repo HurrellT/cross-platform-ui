@@ -2,7 +2,7 @@ import { cssInterop } from "nativewind";
 import * as React from "react";
 import { Pressable, PressableProps, Text } from "react-native";
 
-export interface ButtonProps extends PressableProps {
+export type ButtonProps = PressableProps & {
   text: string;
   testID?: string;
   containerClassName?: string;

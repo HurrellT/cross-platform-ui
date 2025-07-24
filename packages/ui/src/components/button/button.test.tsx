@@ -21,12 +21,12 @@ describe("Button", () => {
     expect(root.props.className).toContain("css-view");
   });
 
-  it("calls onClick when pressed", () => {
-    const mockOnClick = jest.fn();
+  it("calls onPress when pressed", () => {
+    const mockOnPress = jest.fn();
     const { root } = render(
-      <Button text="Click me" onClick={mockOnClick} />
+      <Button text="Click me" onPress={mockOnPress} />
     );
     fireEvent.press(root);
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
+    expect(mockOnPress).toHaveBeenCalledTimes(1);
   });
 });
