@@ -2,25 +2,6 @@
 
 This is a cross-platform component using React Native and Next.js with TypeScript. Powered by Turborepo monorepo, it allows you to share code between web and mobile applications seamlessly.
 
-## Run example projects
-
-To install dependencies and run the example projects, follow these steps:
-```sh
-yarn install
-```
-```sh
-yarn dev
-```
-This will start both the web and mobile applications. You can access the web app at `http://localhost:3000` and the mobile app using Expo Go on your device or emulator.
-
-## Publish the component
-To publish the component to npm, ensure you have the correct package name and version in `package.json` of the `@hurrellt/ui` package. Then run:
-```sh
-yarn build
-cd packages/ui
-npm publish --access public
-```
-
 ## Component installation and usage
 To use the shared component in your projects, install it via npm:
 ```sh
@@ -43,6 +24,31 @@ const ExampleComponent = () => {
   );
 };
 export default ExampleComponent;
+```
+
+
+## Run example projects
+
+To install dependencies and run the example projects, follow these steps:
+```sh
+yarn install
+```
+```sh
+yarn dev
+```
+This will start both the web and mobile applications. You can access the web app at `http://localhost:3000` and the mobile app using Expo Go on your device or emulator.
+
+To run the tests, you can use:
+```sh
+yarn test
+```
+
+## Publish the component
+To publish the component to npm, ensure you have the correct package name and version in `package.json` of the `@hurrellt/ui` package. Then run:
+```sh
+yarn build
+cd packages/ui
+npm publish --access public
 ```
 
 ## What's inside this project?
