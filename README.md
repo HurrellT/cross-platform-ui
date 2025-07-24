@@ -29,7 +29,7 @@ export default ExampleComponent;
 
 ## Run example projects
 
-To install dependencies and run the example projects, follow these steps:
+To install dependencies and run the example projects, follow these steps (important, please use `yarn`):
 ```sh
 yarn install
 ```
